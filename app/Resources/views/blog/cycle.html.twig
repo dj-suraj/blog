@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+    <div class="text-center">Symfony table demo
+    </div>
+
+    <div class="container">
+
+        <table border="1" class="table">
+            <th class="text-center">Numbers</th>
+            {% for i in 0..10 %}
+                <tr>
+                    <td class="{{ cycle(['odd', 'even'], i) }} text-center">
+                        {{ i }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <div class="text-center">Users list
+
+            <table border="1" class="table">
+                <th class="text-center">Id</th>
+                <th class="text-center">Username</th>
+                <th class="text-center">Active</th>
+                {% for user in users if user.active %}
+                    <tr>
+                        <td class="{{ cycle(['odd', 'even'], user.id) }} text-center">
+                            {{ user.id }}
+                        </td>
+
+                        <td class="{{ cycle(['odd', 'even'], user.id) }} text-center">
+                            {{ user.username }}
+                        </td>
+                        <td class="{{ cycle(['odd', 'even'], user.id) }} text-center">
+                            {{ user.active }}
+                        </td>
+                    </tr>
+                {% else %}
+                    <li>No users found</li>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+    {#{{ render(controller('AppBundle:Lucky:num')) }}#}
+
+{% endblock %}

@@ -1,0 +1,12 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+blog_list:
+    path: /blog
+    defaults: { _controller: AppBundle:Blog:list}
+
+blog_show:
+    path: /blog/show/{id}
+    defaults: { _controller: AppBundle:Blog:show }
+
