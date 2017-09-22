@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity\Model;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -12,6 +13,25 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Comments
 {
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Model\Blogs", inversedBy="comments")
+     * @ORM\JoinColumn(name="blog_id", referencedColumnName="id")
+     */
+    private $blogs;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Model\Users", inversedBy="users")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $users;
+
+    public function __construct()
+    {
+        $this->blogs = new ArrayCollection();
+        $this->users = new ArrayCollection();
+    }
+
     /**
      * @var integer
      *

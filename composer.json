@@ -31,7 +31,8 @@
     "sensio/generator-bundle": "~2.3",
     "symfony/phpunit-bridge": "~2.7",
     "phpdocumentor/phpdocumentor": "2.*",
-    "phpmd/phpmd": "~2.4"
+    "phpmd/phpmd": "~2.4",
+    "doctrine/doctrine-migrations-bundle": ">=1.0 <2.0.0"
   },
   "scripts": {
     "symfony-scripts": [
@@ -52,7 +53,7 @@
   "config": {
     "bin-dir": "bin",
     "platform": {
-      "php": "5.3.9"
+      "php": "7.0.23"
     },
     "sort-packages": true
   },

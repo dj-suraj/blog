@@ -15,6 +15,7 @@ class LuckyController extends Controller
      * @param $blog
      * @param $page
      * @return Response
+     * @throws \InvalidArgumentException
      */
     public function numberAction($blog, $page)
     {
@@ -41,6 +42,7 @@ class LuckyController extends Controller
      * @throws \Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException
      * @throws \Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException
      * @throws \RuntimeException
+     * @throws \InvalidArgumentException
      */
     public function numAction()
     {
